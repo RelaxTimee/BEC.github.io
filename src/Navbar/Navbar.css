@@ -13,10 +13,7 @@
   transition: all 0.3s ease;
 }
 
-.navbar:hover {
-  background-color: #232323;
-  border-bottom-color: #bfae7a;
-}
+
 
 .navbar-container {
   display: flex;
@@ -98,10 +95,14 @@
 }
 
 .navbar-link:hover {
-  color: #1e1e1e;
-  background-color: #e9d8a2;
+  color: #f4d03f;
+  background: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  text-shadow: 
+    0 0 5px rgba(244, 208, 63, 0.4),
+    0 0 10px rgba(244, 208, 63, 0.3),
+    0 0 15px rgba(244, 208, 63, 0.2),
+    0 0 20px rgba(244, 208, 63, 0.1);
 }
 
 .navbar-link:hover::before {
@@ -110,13 +111,17 @@
 
 /* Active state */
 .navbar-link.active {
-  color: #1e1e1e;
-  background-color: #e9d8a2;
+  color: #f4d03f;
+  background: transparent;
+  text-shadow: 
+    0 0 5px rgba(244, 208, 63, 0.4),
+    0 0 10px rgba(244, 208, 63, 0.3);
 }
 
 .navbar-link.active::before {
-  background: #bfae7a;
+  background: #f4d03f;
   width: 80%;
+  box-shadow: 0 0 10px rgba(244, 208, 63, 0.3);
 }
 
 .navbar-social {

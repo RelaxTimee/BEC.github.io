@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Montserrat:wght@400;700&display=swap');
 
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Home Section */
 .home-section {
   min-height: 100vh;
