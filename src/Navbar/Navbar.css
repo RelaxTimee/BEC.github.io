@@ -29,11 +29,13 @@
   display: flex;
   align-items: center;
   z-index: 1001;
+  flex: 1;
 }
 
 .navbar-logo a {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   text-decoration: none;
   font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
   color: #e9d8a2;
@@ -68,6 +70,11 @@
   display: flex;
   gap: 2rem;
   align-items: center;
+  justify-content: center;
+  flex: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navbar-link {
@@ -83,6 +90,7 @@
   border-radius: 6px;
   background: transparent;
   border: none;
+  white-space: nowrap;
 }
 
 .navbar-link::before {
@@ -130,6 +138,8 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1;
 }
 
 .navbar-social a {
@@ -152,19 +162,47 @@
 
 .hamburger {
   display: none;
-  flex-direction: column;
-  cursor: pointer;
-  z-index: 2002;
-  background: none;
-  border: none;
-  color: #e9d8a2;
-  font-size: 24px;
-  transition: all 0.3s ease;
+  z-index: 1001;
 }
 
-.hamburger:hover {
-  color: #f4d03f;
-  transform: scale(1.1);
+@media (max-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+  
+  .navbar-links {
+    gap: 1.5rem;
+    position: static;
+    transform: none;
+    flex: auto;
+  }
+  
+  .navbar-logo,
+  .navbar-social {
+    flex: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    flex: none;
+  }
+  
+  .hamburger {
+    display: flex;
+    background: none;
+    border: none;
+    color: #e9d8a2;
+    font-size: 2rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navbar-links,
+  .navbar-social {
+    display: none;
+  }
 }
 
 /* Mobile Menu Overlay */
@@ -217,20 +255,18 @@
 }
 
 .close-btn {
+  display: none;
   background: none;
   border: none;
   color: #e9d8a2;
-  font-size: 24px;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 50%;
 }
 
-.close-btn:hover {
-  color: #f4d03f;
-  background: rgba(244, 208, 63, 0.1);
-  transform: rotate(90deg);
+.mobile-menu.active .close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-links {
@@ -282,7 +318,7 @@
   color: #e9d8a2;
   font-size: 24px;
   transition: all 0.3s ease;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 50%;
   background: rgba(233, 216, 162, 0.1);
   display: flex;

@@ -98,10 +98,10 @@ const Navbar = () => {
         </div>
 
         {/* Hamburger Menu Button */}
-        <button className="hamburger" onClick={toggleMenu} style={{ display: isOpen ? 'none' : 'flex' }}>
-          <FaBars />
+        <button className="hamburger" onClick={toggleMenu}>
+          {isOpen ? null : <FaBars />}
         </button>
-      </div>
+      </div> 
 
       {/* Mobile Menu Overlay */}
       <div
@@ -113,9 +113,11 @@ const Navbar = () => {
       <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
         <div className="mobile-menu-header">
           <div className="mobile-menu-logo">BEC</div>
-          <button className="close-btn" onClick={closeMenu}>
-            <FaTimes />
-          </button>
+          {isOpen && (
+            <button className="close-btn" onClick={closeMenu}>
+              <FaTimes />
+            </button>
+          )}
         </div>
 
         <div className="mobile-links">
