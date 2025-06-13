@@ -325,28 +325,28 @@ const Home = () => {
 
                         <div className="sponsor-item">
                             <div className="sponsor-logo-small">
-                                <img src="/public/logo/SEA_Bridge.png" alt="" className='sponsor-img' />
+                                <img src="/logo/SEA_Bridge.png" alt="" className='sponsor-img' />
                             </div>
                         </div>
 
                         <div className="sponsor-item">
                             <div className="sponsor-logo">
-                                <img src="/public/logo/RABBIT.png" alt="" className='sponsor-img' />
+                                <img src="/logo/RABBIT.png" alt="" className='sponsor-img' />
                             </div>
                         </div>
                         <div className="sponsor-item">
                             <div className="sponsor-logo">
-                                <img src="/public/logo/chang.png" alt="" className='sponsor-img' />
+                                <img src="/logo/chang.png" alt="" className='sponsor-img' />
                             </div>
                         </div>
                         <div className="sponsor-item">
                             <div className="sponsor-logo">
-                                <img src="/public/logo/Tao.png" alt="" className='sponsor-img' />
+                                <img src="/logo/Tao.png" alt="" className='sponsor-img' />
                             </div>
                         </div>
                         <div className="sponsor-item">
                             <div className="sponsor-logo">
-                                <img src="/public/logo/b2s.png" alt="" className='sponsor-img' />
+                                <img src="/logo/b2s.png" alt="" className='sponsor-img' />
                             </div>
                         </div>
                     </div>
