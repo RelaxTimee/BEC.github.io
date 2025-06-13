@@ -1,8 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { FaInstagram, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
+import { SiLine } from 'react-icons/si';
 import './Navbar.css';
-import { FaInstagram, FaLinkedin, FaLine } from 'react-icons/fa';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  // Scroll to section smoothly
+  const handleSectionClick = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setActiveSection(sectionId);
+    closeMenu();
+  };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest('.navbar')) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isOpen]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -11,19 +56,105 @@ const Navbar = () => {
           <a href="/">BEC</a>
         </div>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation Links */}
         <div className="navbar-links">
-          <a className="navbar-link" href="#about">About</a>
-          <a className="navbar-link" href="#speakers">Team us</a>
-          <a className="navbar-link" href="#agenda">Event</a>
-          <a className="navbar-link" href="#sponsors">Sponsors</a>
+          <button
+            className={`navbar-link ${activeSection === 'about' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('about')}
+          >
+            About
+          </button>
+          <button
+            className={`navbar-link ${activeSection === 'speakers' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('speakers')}
+          >
+            Team us
+          </button>
+          <button
+            className={`navbar-link ${activeSection === 'agenda' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('agenda')}
+          >
+            Event
+          </button>
+          <button
+            className={`navbar-link ${activeSection === 'sponsors' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('sponsors')}
+          >
+            Sponsors
+          </button>
         </div>
 
-        {/* Social Icons */}
+        {/* Desktop Social Icons */}
         <div className="navbar-social">
-          <a href="https://www.instagram.com/su.beclub/" target="_blank" rel="noreferrer"><FaInstagram /></a>
-          <a href="https://www.linkedin.com/company/bangrak-entrepreneur-club/posts/?feedView=all" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-          <a href="https://shorturl.at/MZcVr "><FaLine /></a>
+          <a href="https://www.instagram.com/su.beclub/" target="_blank" rel="noreferrer">
+            <FaInstagram />
+          </a>
+          <a href="https://www.linkedin.com/company/bangrak-entrepreneur-club/posts/?feedView=all" target="_blank" rel="noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="https://shorturl.at/MZcVr" target="_blank" rel="noreferrer">
+            <SiLine />
+          </a>
+        </div>
+
+        {/* Hamburger Menu Button */}
+        <button className="hamburger" onClick={toggleMenu} style={{ display: isOpen ? 'none' : 'flex' }}>
+          <FaBars />
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`mobile-menu-overlay ${isOpen ? 'active' : ''}`}
+        onClick={closeMenu}
+      />
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
+        <div className="mobile-menu-header">
+          <div className="mobile-menu-logo">BEC</div>
+          <button className="close-btn" onClick={closeMenu}>
+            <FaTimes />
+          </button>
+        </div>
+
+        <div className="mobile-links">
+          <button
+            className={`mobile-link ${activeSection === 'about' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('about')}
+          >
+            About
+          </button>
+          <button
+            className={`mobile-link ${activeSection === 'speakers' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('speakers')}
+          >
+            Team us
+          </button>
+          <button
+            className={`mobile-link ${activeSection === 'agenda' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('agenda')}
+          >
+            Event
+          </button>
+          <button
+            className={`mobile-link ${activeSection === 'sponsors' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('sponsors')}
+          >
+            Sponsors
+          </button>
+        </div>
+
+        <div className="mobile-social">
+          <a href="https://www.instagram.com/su.beclub/" target="_blank" rel="noreferrer">
+            <FaInstagram />
+          </a>
+          <a href="https://www.linkedin.com/company/bangrak-entrepreneur-club/posts/?feedView=all" target="_blank" rel="noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="https://shorturl.at/MZcVr" target="_blank" rel="noreferrer">
+            <SiLine />
+          </a>
         </div>
       </div>
     </nav>
