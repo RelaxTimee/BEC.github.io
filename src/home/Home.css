@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Montserrat:wght@400;700&display=swap');
 
 /* Home Section */
 .home-section {
@@ -9,7 +9,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
+  background: linear-gradient(13deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
   padding: 0 2rem;
 }
 
@@ -63,7 +63,7 @@
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #d4af37, #f4d03f, #f7dc6f);
+  background: linear-gradient(to top, #201e1d, #d1c094, #ebdec5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -245,7 +245,6 @@
   width: 100%;
   padding: 5rem 2rem;
   color: white;
-  background: rgba(0, 0, 0, 0.1);
 }
 
 .about-container {
@@ -358,7 +357,6 @@
   width: 100%;
   padding: 5rem 2rem;
   color: white;
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .services-container {
@@ -416,7 +414,6 @@
   width: 100%;
   padding: 5rem 2rem;
   color: white;
-  background: rgba(0, 0, 0, 0.1);
 }
 
 .speakers-container {
@@ -702,7 +699,6 @@
   width: 100%;
   padding: 5rem 2rem;
   color: white;
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .agenda-container {
@@ -790,7 +786,6 @@
   width: 100%;
   padding: 5rem 2rem;
   color: white;
-  background: rgba(0, 0, 0, 0.1);
 }
 
 .location-container {
@@ -895,7 +890,6 @@
   width: 100%;
   padding: 5rem 2rem;
   color: white;
-  background: rgba(0, 0, 0, 0.2); 
 }
 
 .sponsors-container {
@@ -927,7 +921,6 @@
   background-clip: text;
 }
 
-
 .sponsors-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -943,12 +936,17 @@
   transition: all 0.3s ease;
 }
 
+.sponsor-item:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 0, 0, 0.5);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+}
 
 .sponsor-logo {
   font-size: 1.5rem;
   font-weight: 600;
   color: #d4af37;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
 }
 
 .sponsor-logo img {
@@ -959,30 +957,6 @@
 .sponsor-logo-small img {
  max-width: 200px;
   margin-bottom: 0.5rem;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
-}
-
-.sponsor-item {
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-
-
-/* For small logo */
-.sponsor-logo-small img {
-  max-width: 200px;
-}
-
-/* Hover effect on image itself */
-.sponsor-img:hover  {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
 }
 
 /* Footer */
@@ -994,3 +968,51 @@
 }
 
 /* Responsive Design Updates */
+
+body, .home-section {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #1e1e1e;
+  color: #e9d8a2;
+}
+
+.hero-title, .section-title, .main-logo {
+  font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+  letter-spacing: 2px;
+  color: #e9d8a2;
+
+}
+
+.navbar-logo a {
+  font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.join-scu-btn, .directions-btn {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: linear-gradient(135deg, #e9d8a2, #bfae7a);
+  color: #1e1e1e;
+  font-weight: bold;
+}
+
+.section-header, .about-subtitle, .card-title, .service-title, .speaker-name, .timeline-title, .location-name {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #e9d8a2;
+}
+
+.hero-description, .about-description, .card-text, .service-text, .speaker-description, .timeline-description, .footer-text {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #f3e7c1;
+}
+
+/* เปลี่ยนพื้นหลังหลักของเว็บและทุก section ให้เป็น #1e1e1e */
+body, .home-section,
+.about-section,
+.services-section,
+.speakers-section,
+.agenda-section,
+.location-section,
+.sponsors-section {
+  background: #1e1e1e !important;
+}
+
+/* ถ้ามี background: rgba(...) หรือ gradient ในแต่ละ section ให้ลบทิ้งหรือคอมเมนต์ออก */
