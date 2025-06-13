@@ -189,7 +189,7 @@ const Home = () => {
                     </div>
 
                     {/* ตรวจสอบว่ามี agenda หรือไม่ */}
-                    {false ? ( // เปลี่ยน false เป็นเงื่อนไขเช็คข้อมูลจริง เช่น agendaList.length > 0
+                    {true ? ( // เปลี่ยน false เป็นเงื่อนไขเช็คข้อมูลจริง เช่น agendaList.length > 0
                         <div className="agenda-timeline">
                             <div className="timeline-item">
                                 <div className="timeline-time">12:30 - 13:00</div>
@@ -318,32 +318,38 @@ const Home = () => {
             <section id="sponsors" className="sponsors-section">
                 <div className="sponsors-container">
                     <div className="section-header">
-                        <h2 className="section-title">🏛️ Our Sponsors</h2>
-                    </div>
-
-                    {/* <div className="sponsors-main">
-                        <div className="main-sponsor">
-                            <div className="sponsor-logo main-logo">TrueSpace</div>
-                        </div>
+                        <h2 className="section-title"> Our Sponsors</h2>
                     </div>
 
                     <div className="sponsors-grid">
+
                         <div className="sponsor-item">
-                            <div className="sponsor-logo">HBC</div>
+                            <div className="sponsor-logo-small">
+                                <img src="/logo/SEA_Bridge.png" alt="" className='sponsor-img' />
+                            </div>
+                        </div>
+
+                        <div className="sponsor-item">
+                            <div className="sponsor-logo">
+                                <img src="/logo/RABBIT.png" alt="" className='sponsor-img' />
+                            </div>
                         </div>
                         <div className="sponsor-item">
-                            <div className="sponsor-logo">B2S</div>
+                            <div className="sponsor-logo">
+                                <img src="/logo/chang.png" alt="" className='sponsor-img' />
+                            </div>
                         </div>
                         <div className="sponsor-item">
-                            <div className="sponsor-logo">VIDENVAREN+</div>
+                            <div className="sponsor-logo">
+                                <img src="/logo/Tao.png" alt="" className='sponsor-img' />
+                            </div>
                         </div>
                         <div className="sponsor-item">
-                            <div className="sponsor-logo">Lactasoy</div>
+                            <div className="sponsor-logo">
+                                <img src="/logo/b2s.png" alt="" className='sponsor-img' />
+                            </div>
                         </div>
-                        <div className="sponsor-item">
-                            <div className="sponsor-logo">Calprance</div>
-                        </div>
-                    </div> */}
+                    </div>
                 </div>
             </section>
 
