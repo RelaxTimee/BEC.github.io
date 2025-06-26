@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaInstagram, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaBars, FaTimes, FaFacebook } from 'react-icons/fa';
 import { SiLine } from 'react-icons/si';
 import './Navbar.css';
 
@@ -51,12 +51,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
-        <div className="navbar-logo">
-          <a href="/">BEC</a>
-        </div>
-
-        {/* Desktop Navigation Links */}
+         {/* Desktop Navigation Links */}
         <div className="navbar-links">
           <button
             className={`navbar-link ${activeSection === 'about' ? 'active' : ''}`}
@@ -83,6 +78,12 @@ const Navbar = () => {
             Sponsors
           </button>
         </div>
+        {/* Logo */}
+        <div className="navbar-logo">
+          <a href="/">BEC</a>
+        </div>
+
+       
 
         {/* Desktop Social Icons */}
         <div className="navbar-social">
@@ -94,6 +95,9 @@ const Navbar = () => {
           </a>
           <a href="https://shorturl.at/MZcVr" target="_blank" rel="noreferrer">
             <SiLine />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61576673492512" target="_blank" rel="noreferrer">
+            <FaFacebook />
           </a>
         </div>
 
@@ -156,6 +160,9 @@ const Navbar = () => {
           </a>
           <a href="https://shorturl.at/MZcVr" target="_blank" rel="noreferrer">
             <SiLine />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61576673492512" target="_blank" rel="noreferrer">
+            <FaFacebook />
           </a>
         </div>
       </div>

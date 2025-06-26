@@ -1,5 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { SiLine } from 'react-icons/si';
 import './Home.css';
+import { FaCalendarAlt, FaFortAwesome, FaMicrophone } from "react-icons/fa";
+import { GoGoal } from "react-icons/go";
+import { HiMiniRocketLaunch } from "react-icons/hi2";
+import { GiChampions } from "react-icons/gi";
+import { FaHandsHoldingCircle } from "react-icons/fa6";
+
 
 
 
@@ -49,7 +56,7 @@ const Home = () => {
                     </div>
 
                     <div className="about-main">
-                        <div className="about-icon">👥</div>
+                        <div className="about-icon"><FaFortAwesome /></div>
                         <h3 className="about-subtitle">BangRak Entrepreneur Club (BEC)</h3>
                         <p className="about-description">
                             We're a group of students building a community that empowers entrepreneurship, organizes training and inspired young entrepreneur.
@@ -58,7 +65,7 @@ const Home = () => {
 
                     <div className="about-cards">
                         <div className="about-card">
-                            <div className="card-icon">🎯</div>
+                            <div className="card-icon"><GoGoal /></div>
                             <h4 className="card-title">Vision</h4>
                             <p className="card-text">
                                 The institute that connects attendees to broaden their opportunities and
@@ -66,7 +73,7 @@ const Home = () => {
                             </p>
                         </div>
                         <div className="about-card">
-                            <div className="card-icon">🚀</div>
+                            <div className="card-icon"><HiMiniRocketLaunch /></div>
                             <h4 className="card-title">Mission</h4>
                             <p className="card-text">
                                 The area allows individuals from diverse backgrounds to
@@ -74,7 +81,7 @@ const Home = () => {
                             </p>
                         </div>
                         <div className="about-card">
-                            <div className="card-icon">🏆</div>
+                            <div className="card-icon"><GiChampions /></div>
                             <h4 className="card-title">Goal</h4>
                             <p className="card-text">
                                 Become a leading institute that empowers individuals to
@@ -122,7 +129,7 @@ const Home = () => {
             <section id="speakers" className="speakers-section">
                 <div className="speakers-container">
                     <div className="section-header">
-                        <h2 className="section-title">🎤 Speakers</h2>
+                        <h2 className="section-title"><FaMicrophone /> Speakers</h2>
                     </div>
 
                     {/* Scrollable container */}
@@ -185,7 +192,7 @@ const Home = () => {
             <section id="agenda" className="agenda-section">
                 <div className="agenda-container">
                     <div className="section-header">
-                        <h2 className="section-title">📅 Event Agenda</h2>
+                        <h2 className="section-title"><FaCalendarAlt /> Event Agenda</h2>
                     </div>
 
                     {/* ตรวจสอบว่ามี agenda หรือไม่ */}
@@ -356,7 +363,9 @@ const Home = () => {
             {/* Footer */}
             <footer className="footer">
                 <div className="footer-container">
-                    <p className="footer-text">© 2025 BangRak Entrepreneur Club Unite. All rights reserved.</p>
+                    <p className="footer-text">© 2025 BangRak Entrepreneur Club Unite. All rights reserved. Designed and developed by Pawit Panyasuphapong (Team).
+
+</p>
                 </div>
             </footer>
 

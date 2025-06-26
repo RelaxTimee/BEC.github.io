@@ -7,12 +7,30 @@
   right: 0;
   z-index: 1000;
   font-family: 'Montserrat', Arial, sans-serif;
-  background-color: #1e1e1e;
-  border-bottom: 1px solid #e9d8a2;
-  padding: 0 2rem;
+  background-color: #050505; /* เปลี่ยนจาก #1e1e1e */
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+/* เปลี่ยนเมนูมือถือให้เข้ากับธีม #050505 */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #050505; /* เปลี่ยนจาก gradient หรือ #1e1e1e */
+  z-index: 2001;
+  transition: all 0.3s ease;
+  padding: 2rem;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+  border-left: 1px solid #e9d8a2;
+}
+
+/* เปลี่ยนสีพื้นหลัง overlay ให้เข้มขึ้น */
+.mobile-menu-overlay.active {
+  background: rgba(5,5,5,0.85);
 }
 
 .navbar-container {
@@ -28,7 +46,7 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  z-index: 1001;
+ 
   flex: 1;
 }
 
@@ -162,7 +180,15 @@
 
 .hamburger {
   display: none;
-  z-index: 1001;
+  z-index: 1002;
+  background: none;
+  border: none;
+  color: #e9d8a2;
+  font-size: 2rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
 }
 
 @media (max-width: 1024px) {
@@ -184,19 +210,18 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
+  
   .navbar-logo {
     flex: none;
+    z-index: 1002;
   }
   
   .hamburger {
     display: flex;
-    background: none;
-    border: none;
-    color: #e9d8a2;
-    font-size: 2rem;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
+    z-index: 1002;
   }
   
   .navbar-links,
@@ -215,8 +240,9 @@
   display: block;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(5,5,5,0.85);
   pointer-events: auto;
+  z-index: 1500;
 }
 
 .mobile-menu {
@@ -225,7 +251,7 @@
   right: -100%;
   width: 300px;
   height: 100vh;
-  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  background: #050505; /* เปลี่ยนจาก gradient หรือ #1e1e1e */
   z-index: 2001;
   transition: all 0.3s ease;
   padding: 2rem;
@@ -309,7 +335,7 @@
 .mobile-social {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   padding-top: 2rem;
   border-top: 1px solid #e9d8a2;
 }

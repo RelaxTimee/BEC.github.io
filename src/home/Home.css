@@ -14,7 +14,7 @@ html {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(13deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
+  background: #050505 !important;
   padding: 0 2rem;
 }
 
@@ -286,11 +286,11 @@ html {
 .about-main {
   text-align: center;
   margin-bottom: 4rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: #181511 !important; /* เปลี่ยนพื้นหลังเป็นน้ำตาลดำสนิท */
   padding: 3rem 2rem;
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid #e9d8a2 !important; /* ขอบทองอ่อน */
 }
 
 .about-icon {
@@ -323,38 +323,20 @@ html {
 }
 
 .about-card {
-  background: rgba(0, 0, 0, 0.3);
+  background: #181511 !important; /* เปลี่ยนพื้นหลังเป็นน้ำตาลดำสนิท */
   padding: 2.5rem;
   border-radius: 15px;
   text-align: center;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid #e9d8a2 !important; /* ขอบทองอ่อน */
   transition: all 0.3s ease;
 }
 
 .about-card:hover {
   transform: translateY(-5px);
-  background: rgba(0, 0, 0, 0.5);
-  border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
-}
-
-.card-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.card-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #d4af37;
-}
-
-.card-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  background: #23201a !important; /* เข้มขึ้นเมื่อ hover */
+  border-color: #d4af37 !important;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.12);
 }
 
 /* Services Section */
@@ -379,18 +361,18 @@ html {
 }
 
 .service-card {
-  background: rgba(0, 0, 0, 0.3);
+  background: #181511 !important;
   padding: 2.5rem;
   border-radius: 15px;
   text-align: center;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid #e9d8a2 !important; 
   transition: all 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-5px);
-  background: rgba(0, 0, 0, 0.5);
+  background: #23201a !important;
   border-color: rgba(212, 175, 55, 0.4);
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
 }
@@ -961,7 +943,7 @@ html {
 
 .sponsor-logo-small img {
  max-width: 200px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;                                  
 }
 
 /* Footer */
@@ -976,7 +958,7 @@ html {
 
 body, .home-section {
   font-family: 'Montserrat', Arial, sans-serif;
-  background: #1e1e1e;
+  background: #050505;
   color: #e9d8a2;
 }
 
@@ -1009,7 +991,7 @@ body, .home-section {
   color: #f3e7c1;
 }
 
-/* เปลี่ยนพื้นหลังหลักของเว็บและทุก section ให้เป็น #1e1e1e */
+/* เปลี่ยนพื้นหลังหลักของเว็บและทุก section ให้เป็น #050505 */
 body, .home-section,
 .about-section,
 .services-section,
@@ -1017,7 +999,11 @@ body, .home-section,
 .agenda-section,
 .location-section,
 .sponsors-section {
-  background: #1e1e1e !important;
+  background: #050505 !important;
 }
 
-/* ถ้ามี background: rgba(...) หรือ gradient ในแต่ละ section ให้ลบทิ้งหรือคอมเมนต์ออก */
+/* ปรับสีพื้นหลังที่เป็น #1e1e1e หรือ gradient ให้เป็น #050505 */
+.home-section {
+  /* background: linear-gradient(13deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%); */
+  background: #050505 !important;
+}
