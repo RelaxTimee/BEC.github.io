@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oranienbaum&family=Recursive:wght@800&display=swap');
 
 /* Smooth Scroll */
 html {
@@ -20,17 +23,18 @@ html {
 
 /* Hero Background */
 .hero-background {
-  position: absolute;
+  position: fixed;      /* เปลี่ยนจาก absolute เป็น fixed */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: radial-gradient(
     ellipse at center,
     rgba(212, 175, 55, 0.1) 0%,
     transparent 70%
   );
-  z-index: 1;
+  z-index: 0;           /* อยู่ข้างหลังสุด */
+  pointer-events: none; /* ไม่ให้บังการคลิก */
 }
 
 .hero-background::before {
@@ -55,6 +59,9 @@ html {
 
 /* SCU Logo Circle */
 .logo-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10rem;
   animation: slideInUp 1s ease-out 0.1s both, pulse 2s infinite 1.2s;
 }
@@ -297,6 +304,9 @@ html {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #d4af37;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-subtitle {
@@ -396,100 +406,182 @@ html {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Speakers Section */
-.speakers-section {
-  width: 100%;
-  padding: 5rem 2rem;
-  color: white;
+/* Speaker Card Slider Styles */
+.speakers-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
 }
 
-.speakers-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+.speakers-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.3s ease;
+    padding: 0 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.speakers-scroll-container {
-  width: 100%;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-}
-
-.speakers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-  width: 100%;
-  min-width: 100%;
+.speakers-track::-webkit-scrollbar {
+    display: none;
 }
 
 .speaker-card {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  min-height: 300px;
+    min-width: 280px;
+    width: 20rem;
+    height: 25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .speaker-card:hover {
-  transform: translateY(-5px);
-  background: rgba(0, 0, 0, 0.6);
-  border-color: rgba(212, 175, 55, 0.4);
-  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
 }
 
 .speaker-image {
-  width: 100%;
-  height: 250px;
-  background: linear-gradient(135deg, #d4af37, #b8941f);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  color: #000;
-  overflow: hidden;
+    width: 100%;
+    height: 220px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    overflow: hidden;
+    position: relative;
 }
 
 .speaker-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .speaker-info {
-  padding: 2rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+    padding: 1.5rem;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 }
 
 .speaker-name {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.speaker-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.speaker-card:hover .speaker-name {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.speaker-card:hover .speaker-details {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .speaker-topic {
-  font-size: 1rem;
-  color: #d4af37;
-  margin-bottom: 1rem;
-  font-weight: 500;
+    font-size: 0.9rem;
+    color: #d4af37;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
 }
 
 .speaker-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 1.5rem;
-  flex: 1;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
+.learn-more-btn {
+    background: linear-gradient(135deg, #d4af37, #b8941f);
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.learn-more-btn:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Mobile Responsive for Speaker Slider */
+@media (max-width: 768px) {
+    .speakers-section {
+        padding: 1rem;
+    }
+
+    .speaker-card {
+        min-width: 250px;
+        width: 250px;
+    }
+
+    .speakers-track {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .speaker-card {
+        min-width: 220px;
+        width: 220px;
+        height: 320px;
+    }
+
+    .speaker-image {
+        height: 180px;
+        font-size: 4rem;
+    }
+
+    .speaker-info {
+        height: 140px;
+    }
+}
 .learn-more-btn {
   background: transparent;
   color: #d4af37;
@@ -508,6 +600,56 @@ html {
   transform: translateX(5px);
 }
 
+/* Speaker Card Custom Slider */
+.speakers-slider-custom {
+  scrollbar-width: thin;
+  scrollbar-color: #d4af37 #181511;
+}
+.speakers-slider-custom::-webkit-scrollbar {
+  height: 8px;
+  background: #181511;
+}
+.speakers-slider-custom::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+.speaker-card-custom {
+  background: transparent;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.speaker-card-custom:hover {
+  box-shadow: 0 8px 32px rgba(212,175,55,0.18);
+  transform: translateY(-8px) scale(1.03);
+}
+.speaker-img-wrap img {
+  transition: transform 0.4s;
+}
+.speaker-card-custom:hover .speaker-img-wrap img {
+  transform: scale(1.08) rotate(-2deg);
+}
+.speaker-overlay {
+  pointer-events: none;
+}
+.speaker-card-custom:hover .speaker-overlay,
+.speaker-card-custom:focus-within .speaker-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.speaker-card-custom:hover .speaker-name-custom,
+.speaker-card-custom:focus-within .speaker-name-custom {
+  opacity: 0;
+}
+@media (max-width: 600px) {
+  .speaker-card-custom {
+    min-width: 180px !important;
+    max-width: 200px !important;
+    height: 300px !important;
+  }
+  .speaker-img-wrap {
+    margin-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+}
 /* Animations */
 @keyframes float {
   0%,
@@ -970,8 +1112,11 @@ body, .home-section {
 }
 
 .navbar-logo a {
-  font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
-  letter-spacing: 2px;
+   font-family: "Recursive", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: -1px;
 }
 
 .join-scu-btn, .directions-btn {

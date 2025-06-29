@@ -10,6 +10,7 @@ import { FaHandsHoldingCircle } from "react-icons/fa6";
 
 
 
+
 const Home = () => {
     return (
         <section id="home" className="home-section">
@@ -96,7 +97,7 @@ const Home = () => {
             <section id="services" className="services-section">
                 <div className="services-container">
                     <div className="section-header">
-                        <h2 className="section-title">🤝 What We Offer</h2>
+                        <h2 className="section-title"> What We Offer</h2>
                     </div>
 
                     <div className="services-grid">
@@ -125,62 +126,118 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Speakers Section */}
-            <section id="speakers" className="speakers-section">
+            {/* Guest Speaker Content */}
+            <section id="guest-speaker" className="speakers-section">
                 <div className="speakers-container">
                     <div className="section-header">
-                        <h2 className="section-title"><FaMicrophone /> Speakers</h2>
+                        <h2 className="section-title">Featured <span className="highlight">Speaker</span></h2>
+                        <div className="title-underline"></div>
                     </div>
 
-                    {/* Scrollable container */}
-                    <div className="speakers-scroll-container">
-                        <div className="speakers-grid">
-                            <div className="speaker-card">
-                                <div className="speaker-image">👤</div>
-                                <div className="speaker-info">
-                                    <h4 className="speaker-name">Ms. Supansa Charoensuk</h4>
-                                    <p className="speaker-topic">Topic: Building Your Personal Brand</p>
-                                    <p className="speaker-description">
-                                        Marketing strategist and branding expert, founder of BrandSpark, helping young entrepreneurs grow their online presence.
-                                    </p>
-                                    <button className="learn-more-btn">Learn More →</button>
+                    <div className="bg-gradient-to-br rounded-3xl p-12 mt-8 backdrop-blur-lg shadow-2xl">
+                        <div className="flex flex-col lg:flex-row gap-12 items-center">
+                            {/* Left Section */}
+                            <div className="flex-1">
+                                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                                    <FaMicrophone className="text-base" />
+                                    <span>Topic Session: How Business Innovators Think?</span>  
+                                </div>
+
+                                <h3 className="text-4xl font-bold text-yellow-600 mb-8 drop-shadow-lg">
+                                    Dr. Buranin Rattanasombat
+                                </h3>  
+
+                                {/* Organizations */}
+                                <div className="space-y-6">
+                                    {/* Row 1 */}
+                                    <div className="flex flex-col md:flex-row gap-8 pb-6 border-b border-white/10">
+                                        <div className="flex items-center gap-4 flex-1">
+                                            <div className="w-16 h-14 bg-gradient-to-br from-gray-900 to-gray-700 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                                                PTT
+                                            </div>
+                                            <div className="flex-1">
+                                                <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
+                                                    Chief New Business and<br />Sustainability Officer
+                                                </div>
+                                                <div className="text-sm text-white/70 leading-tight">
+                                                    PTT Public Company Limited
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-4 flex-1">
+                                            <div className="w-16 h-14 bg-gradient-to-br from-gray-700 to-gray-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                                                ARUN+
+                                            </div>
+                                            <div className="flex-1">
+                                                <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
+                                                    ประธานกรรมการ
+                                                </div>
+                                                <div className="text-sm text-white/70 leading-tight">
+                                                    บริษัท อรุณพลัส จำกัด
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Row 2 */}
+                                    <div className="flex flex-col md:flex-row gap-8 pb-6 border-b border-white/10">
+                                        <div className="flex items-center gap-4 flex-1">
+                                            <div className="w-16 h-14 bg-gradient-to-br from-gray-600 to-gray-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                                                MAT
+                                            </div>
+                                            <div className="flex-1">
+                                                <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
+                                                    President of
+                                                </div>
+                                                <div className="text-sm text-white/70 leading-tight">
+                                                    Marketing Association of<br />Thailand
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-4 flex-1">
+                                            <div className="w-16 h-14 bg-gradient-to-br from-gray-500 to-gray-400 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                                                MTEC
+                                            </div>
+                                            <div className="flex-1">
+                                                <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
+                                                    กรรมการ
+                                                </div>
+                                                <div className="text-sm text-white/70 leading-tight">
+                                                    ศูนย์เทคโนโลยีโลหะและวัสดุแห่งชาติ<br />(MTEC)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Row 3 */}
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-16 h-14 bg-gradient-to-br from-gray-900 to-gray-700 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-lg text-center leading-tight">
+                                            <div>
+                                                <div>ENERGY</div>
+                                                <div className="text-xs">ACADEMY</div>
+                                            </div>
+                                        </div>
+                                        <div className="flex-1">
+                                            <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
+                                                กรรมการบริหาร
+                                            </div>
+                                            <div className="text-sm text-white/70 leading-tight">
+                                                สถาบันวิทยาการพลังงาน
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="speaker-card">
-                                <div className="speaker-image">👨‍💼</div>
-                                <div className="speaker-info">
-                                    <h4 className="speaker-name">Mr. Kongphat Phaiboonnukulkij</h4>
-                                    <p className="speaker-topic">Topic: How to start the business</p>
-                                    <p className="speaker-description">
-                                        An innovative architect and inventor, serving as the Chief Executive Officer
-                                        and Chief Innovation Officer of Videnvaren+.
-                                    </p>
-                                    <button className="learn-more-btn">Learn More →</button>
-                                </div>
-                            </div>
-
-                            <div className="speaker-card">
-                                <div className="speaker-image">👨‍🔬</div>
-                                <div className="speaker-info">
-                                    <h4 className="speaker-name">Dr. Thanakorn Srisuk</h4>
-                                    <p className="speaker-topic">Topic: Innovation in Tech Startups</p>
-                                    <p className="speaker-description">
-                                        Tech startup mentor and university lecturer, passionate about fostering innovation and entrepreneurship in Thailand.
-                                    </p>
-                                    <button className="learn-more-btn">Learn More →</button>
-                                </div>
-                            </div>
-
-                            <div className="speaker-card">
-                                <div className="speaker-image">👩‍💻</div>
-                                <div className="speaker-info">
-                                    <h4 className="speaker-name">Ms. Natcha Wongchai</h4>
-                                    <p className="speaker-topic">Topic: Women in Entrepreneurship</p>
-                                    <p className="speaker-description">
-                                        Co-founder of Tech4All, empowering women in tech and business, and advocate for diversity in the startup ecosystem.
-                                    </p>
-                                    <button className="learn-more-btn">Learn More →</button>
+                            {/* Right Section - Speaker Photo */}
+                            <div className="flex-shrink-0 w-full lg:w-80">
+                                <div className="w-full h-96 rounded-2xl overflow-hidden relative shadow-2xl group transform perspective-1000 -rotate-y-3 hover:rotate-y-0 hover:scale-105 transition-all duration-500">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/10 to-transparent z-10"></div>
+                                    <img
+                                        src="/Speakers/2.png"
+                                        alt="Dr. Buranin Rattanasombat"
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -188,11 +245,71 @@ const Home = () => {
                 </div>
             </section>
 
+
+            {/* Speakers Section */}
+            <section id="speakers" className="speakers-section py-16 bg-white">
+                <div className="speakers-container max-w-6xl mx-auto px-4">
+                    <div className="section-header text-center mb-10">
+                        <h2 className="section-title text-3xl font-bold"> Speakers</h2>
+                    </div>
+
+                    <div className="flex flex-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
+
+                        {/* Speaker Card */}
+                        <div className="speaker-card relative w-72 h-96 rounded-xl overflow-hidden group shadow-lg">
+                            {/* Speaker Image */}
+                            <img
+                                src="/Speakers/1.png"
+                                alt="Dr. Thanakorn Srisuk"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-500 p-4 flex flex-col justify-end text-white">
+                                <h4 className="text-lg font-bold">Mr. Kongphat Phaiboonnukulkij </h4>
+                                <p className="text-sm">Workshop : Design Thinking, BMC, and Value Propositions.</p>
+                                <p className="text-xs mt-1 text-gray-300">
+                                    Work Experiences :
+                                    CEO and CIO of Videnvaren+
+                                    Architecture Consultant  of EGS-plan International GmbH
+                                    Co-Founder and CTO of Phytavaren Technology
+                                    Junior Architect of Corstorphine & Wright Architects
+                                    Architectural Innovation Specialist and Delegate of COP28 SEforALL Affiliation
+                                </p>
+                            </div>
+                        </div>
+                        {/* Speaker Card */}
+                        <div className="speaker-card relative w-72 h-96 rounded-xl overflow-hidden group shadow-lg">
+                            {/* Speaker Image */}
+                            <img
+                                src="/Speakers/2.png"
+                                alt="Dr. Thanakorn Srisuk"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-500 p-4 flex flex-col justify-end text-white">
+                                <h4 className="text-lg font-bold">Mr. Harit Hatwong</h4>
+                                <p className="text-sm">Workshop : Pitching Technique, and Pitch Deck.</p>
+                                <p className="text-xs mt-1 text-gray-300">
+                                    Work Experiences :
+                                    Founder & Managing Director of INNOVATORS CO., LTD.
+                                    Marketing & Sales Director of Baan Pradubdaow cadet tutor school
+                                    COO and Co-founder of Pok Pok - Food Delivery Platform
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
             {/* Agenda Section */}
             <section id="agenda" className="agenda-section">
                 <div className="agenda-container">
                     <div className="section-header">
-                        <h2 className="section-title"><FaCalendarAlt /> Event Agenda</h2>
+                        <h2 className="section-title"> Event Agenda</h2>
                     </div>
 
                     {/* ตรวจสอบว่ามี agenda หรือไม่ */}
@@ -364,8 +481,7 @@ const Home = () => {
             <footer className="footer">
                 <div className="footer-container">
                     <p className="footer-text">© 2025 BangRak Entrepreneur Club Unite. All rights reserved. Designed and developed by Pawit Panyasuphapong (Team).
-
-</p>
+                    </p>
                 </div>
             </footer>
 
