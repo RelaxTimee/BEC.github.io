@@ -234,7 +234,7 @@ const Home = () => {
                                 <div className="w-full h-96 rounded-2xl overflow-hidden relative shadow-2xl group transform perspective-1000 -rotate-y-3 hover:rotate-y-0 hover:scale-105 transition-all duration-500">
                                     <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/10 to-transparent z-10"></div>
                                     <img
-                                        src="/Speakers/2.png"
+                                        src="/Speakers/3.png"
                                         alt="Dr. Buranin Rattanasombat"
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
