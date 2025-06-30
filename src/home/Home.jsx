@@ -140,20 +140,20 @@ const Home = () => {
                             <div className="flex-1">
                                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-600 to-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-semibold mb-6">
                                     <FaMicrophone className="text-base" />
-                                    <span>Topic Session: How Business Innovators Think?</span>  
+                                    <span>Topic Session: How Business Innovators Think?</span>
                                 </div>
 
                                 <h3 className="text-4xl font-bold text-yellow-600 mb-8 drop-shadow-lg">
                                     Dr. Buranin Rattanasombat
-                                </h3>  
+                                </h3>
 
                                 {/* Organizations */}
                                 <div className="space-y-6">
                                     {/* Row 1 */}
                                     <div className="flex flex-col md:flex-row gap-8 pb-6 border-b border-white/10">
                                         <div className="flex items-center gap-4 flex-1">
-                                            <div className="w-16 h-14 bg-gradient-to-br from-gray-900 to-gray-700 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                                                PTT
+                                            <div className="w-16 h-14 bg-gradient-to-br flex items-center justify-center">
+                                                <img src="/logo/ptt.png" alt="PTT" className="h-full object-contain" />
                                             </div>
                                             <div className="flex-1">
                                                 <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
@@ -165,8 +165,8 @@ const Home = () => {
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-4 flex-1">
-                                            <div className="w-16 h-14 bg-gradient-to-br from-gray-700 to-gray-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                                                ARUN+
+                                            <div className="w-16 h-14 bg-gradient-to-br flex items-center justify-center">
+                                                <img src="/logo/logo-arun-plus.svg" alt="ARUN+" className="h-full object-contain" />
                                             </div>
                                             <div className="flex-1">
                                                 <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
@@ -182,8 +182,8 @@ const Home = () => {
                                     {/* Row 2 */}
                                     <div className="flex flex-col md:flex-row gap-8 pb-6 border-b border-white/10">
                                         <div className="flex items-center gap-4 flex-1">
-                                            <div className="w-16 h-14 bg-gradient-to-br from-gray-600 to-gray-500 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                                                MAT
+                                            <div className="w-16 h-14 bg-gradient-to-br flex items-center justify-center">
+                                                <img src="/logo/MAT.png" alt="MAT" className="h-full object-contain" />
                                             </div>
                                             <div className="flex-1">
                                                 <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
@@ -195,8 +195,8 @@ const Home = () => {
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-4 flex-1">
-                                            <div className="w-16 h-14 bg-gradient-to-br from-gray-500 to-gray-400 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                                                MTEC
+                                            <div className="w-16 h-14 bg-gradient-to-br flex items-center justify-center">
+                                                <img src="/logo/MTEC.png" alt="MTEC" className="h-full object-contain" />
                                             </div>
                                             <div className="flex-1">
                                                 <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
@@ -211,11 +211,8 @@ const Home = () => {
 
                                     {/* Row 3 */}
                                     <div className="flex items-center gap-4">
-                                        <div className="w-16 h-14 bg-gradient-to-br from-gray-900 to-gray-700 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-lg text-center leading-tight">
-                                            <div>
-                                                <div>ENERGY</div>
-                                                <div className="text-xs">ACADEMY</div>
-                                            </div>
+                                        <div className="w-16 h-14 bg-gradient-to-br flex items-center justify-center">
+                                            <img src="/logo/TEA.png" alt="ENERGY ACADEMY" className="h-full object-contain" />
                                         </div>
                                         <div className="flex-1">
                                             <div className="font-semibold text-yellow-600 text-base leading-tight mb-1">
@@ -228,7 +225,6 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-
                             {/* Right Section - Speaker Photo */}
                             <div className="flex-shrink-0 w-full lg:w-80">
                                 <div className="w-full h-96 rounded-2xl overflow-hidden relative shadow-2xl group transform perspective-1000 -rotate-y-3 hover:rotate-y-0 hover:scale-105 transition-all duration-500">
@@ -299,6 +295,95 @@ const Home = () => {
                                 </p>
                             </div>
                         </div>
+
+                    </div>
+                </div>
+            </section>
+
+            {/* Judge  Section */}
+            <section id="speakers" className="speakers-section py-16 bg-white">
+                <div className="speakers-container max-w-6xl mx-auto px-4">
+                    <div className="section-header text-center mb-10">
+                        <h2 className="section-title text-3xl font-bold"> JUDGE</h2>
+                    </div>
+
+                    <div className="flex flex-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
+
+                        {/* Judge  Card */}
+                        <div className="speaker-card relative w-72 h-96 rounded-xl overflow-hidden group shadow-lg">
+                            {/* Judge  Image */}
+                            <img
+                                src="/Judge/3.png"
+                                alt="Mr. Podsawee Wanatham"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-500 p-4 flex flex-col justify-end text-white">
+                                <h4 className="text-lg font-bold">Mr. Podsawee Wanatham</h4>
+                                <p className="text-sm"></p>
+                                <p className="text-xs mt-1 text-gray-300">
+                                    Work Experiences :
+                                    CEO and Founder of THE STATION GROUP HOLDINGS CO., LTD.
+                                    Co-CEO of BUALOITECH CO., LTD.
+                                    CTO of FEITIAN CO., LTD.
+                                    CTO and Co-Founder of ARTMOSPHERE CO., LTD.
+                                    Co-Founder of CONTESTER CO., LTD.
+                                    Management Team & CEO Trainee of IBOTNOI CO., LTD.
+                                    Full Stack Developer of LEVEL11 CO., LTD.
+                                    Full Stack Developer of KILLSWITCH HOLDING LTD.
+                                    Founder of LEARNING CODE STATION
+                                </p>
+                            </div>
+                        </div>
+                        {/* Judge  Card */}
+                        <div className="speaker-card relative w-72 h-96 rounded-xl overflow-hidden group shadow-lg">
+                            {/* Judge  Image */}
+                            <img
+                                src="/Judge/4.png"
+                                alt="Mr. Tanadon Wanitnunttada"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-500 p-4 flex flex-col justify-end text-white">
+                                <h4 className="text-lg font-bold">Mr. Tanadon Wanitnunttada</h4>
+                                <p className="text-sm"></p>
+                                <p className="text-xs mt-1 text-gray-300">
+                                    Work Experiences :
+                                    Co-Founder / CEO / Lead Product Designer / Co-Chairma of  KO-EXPERIENCE
+                                    UI Designer / Product Designer of Bluebik Group
+                                    Product Designer (UX Designer / UI Designer / UX Researcher / Business Analyst / Motion Graphic Designer) of  MIAX Company
+                                    UX / UI Designer / Graphic Designer / Brand Designer of  OPPHUB (Opportunity Hub)
+                                    Co-Founder / Project Manager / Experience Designer / Motion Graphic Designer of Timeless Studio
+                                </p>
+                            </div>
+                        </div>
+
+
+                        {/* Judge  Card */}
+                        <div className="speaker-card relative w-72 h-96 rounded-xl overflow-hidden group shadow-lg">
+                            {/* Judge  Image */}
+                            <img
+                                src="/Judge/5.png"
+                                alt="Mr. Tanadon Wanitnunttada"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-500 p-4 flex flex-col justify-end text-white">
+                                <h4 className="text-lg font-bold">Mr. Nontouch Srisuksa</h4>
+                                <p className="text-sm"></p>
+                                <p className="text-xs mt-1 text-gray-300">
+                                    Work Experiences :
+                                    Head of IT Strategy & Planning (Vice President) of KRUNGSRI CONSUMER
+                                    PMO Director of TRUE DIGITAL GROUP
+                                    Head of IT Digital Transformation and PMO of CP INTERTRADE
+                                    Part-Time Lecturer / Guest Speaker / Committee at Chulalongkorn University / Mahidol University / Silpakorn University / PMI Thailand / Hubba Thailand / Thai Health Promotion / Knowledger / AIBP / CIO Summit / Cloud & Data Center Convention, Future CIO Conference
+                                </p>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>
