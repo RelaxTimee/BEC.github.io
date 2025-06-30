@@ -130,7 +130,7 @@ const Home = () => {
             <section id="guest-speaker" className="speakers-section">
                 <div className="speakers-container">
                     <div className="section-header">
-                        <h2 className="section-title">Featured <span className="highlight">Speaker</span></h2>
+                        <h2 className="section-title">Guest  <span className="highlight">Speaker</span></h2>
                         <div className="title-underline"></div>
                     </div>
 

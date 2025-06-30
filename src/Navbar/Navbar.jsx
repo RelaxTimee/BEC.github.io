@@ -63,7 +63,7 @@ const Navbar = () => {
             className={`navbar-link ${activeSection === 'speakers' ? 'active' : ''}`}
             onClick={() => handleSectionClick('speakers')}
           >
-            Team us
+            Guest 
           </button>
           <button
             className={`navbar-link ${activeSection === 'agenda' ? 'active' : ''}`}
