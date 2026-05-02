@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FaInstagram, FaLinkedin, FaBars, FaTimes, FaFacebook } from 'react-icons/fa';
 import { SiLine } from 'react-icons/si';
 import './Navbar.css';
@@ -60,10 +60,10 @@ const Navbar = () => {
             About
           </button>
           <button
-            className={`navbar-link ${activeSection === 'speakers' ? 'active' : ''}`}
-            onClick={() => handleSectionClick('speakers')}
+            className={`navbar-link ${activeSection === 'guest-speaker' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('guest-speaker')}
           >
-            Guest 
+            Guest
           </button>
           <button
             className={`navbar-link ${activeSection === 'agenda' ? 'active' : ''}`}
@@ -87,23 +87,29 @@ const Navbar = () => {
 
         {/* Desktop Social Icons */}
         <div className="navbar-social">
-          <a href="https://www.instagram.com/su.beclub/" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/su.beclub/" target="_blank" rel="noreferrer" aria-label="Open BEC Instagram">
             <FaInstagram />
           </a>
-          <a href="https://www.linkedin.com/company/bangrak-entrepreneur-club/posts/?feedView=all" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/company/bangrak-entrepreneur-club/posts/?feedView=all" target="_blank" rel="noreferrer" aria-label="Open BEC LinkedIn">
             <FaLinkedin />
           </a>
-          <a href="https://shorturl.at/MZcVr" target="_blank" rel="noreferrer">
+          <a href="https://shorturl.at/MZcVr" target="_blank" rel="noreferrer" aria-label="Open BEC Line">
             <SiLine />
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61576673492512" target="_blank" rel="noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=61576673492512" target="_blank" rel="noreferrer" aria-label="Open BEC Facebook">
             <FaFacebook />
           </a>
         </div>
 
         {/* Hamburger Menu Button */}
-        <button className="hamburger" onClick={toggleMenu}>
-          {isOpen ? null : <FaBars />}
+        <button
+          className="hamburger"
+          onClick={toggleMenu}
+          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div> 
 
@@ -114,11 +120,11 @@ const Navbar = () => {
       />
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${isOpen ? 'active' : ''}`}>
+      <div id="mobile-menu" className={`mobile-menu ${isOpen ? 'active' : ''}`} aria-hidden={!isOpen}>
         <div className="mobile-menu-header">
           <div className="mobile-menu-logo">BEC</div>
           {isOpen && (
-            <button className="close-btn" onClick={closeMenu}>
+            <button className="close-btn" onClick={closeMenu} aria-label="Close navigation menu">
               <FaTimes />
             </button>
           )}
@@ -132,10 +138,10 @@ const Navbar = () => {
             About
           </button>
           <button
-            className={`mobile-link ${activeSection === 'speakers' ? 'active' : ''}`}
-            onClick={() => handleSectionClick('speakers')}
+            className={`mobile-link ${activeSection === 'guest-speaker' ? 'active' : ''}`}
+            onClick={() => handleSectionClick('guest-speaker')}
           >
-            Team us
+            Guest
           </button>
           <button
             className={`mobile-link ${activeSection === 'agenda' ? 'active' : ''}`}
@@ -152,16 +158,16 @@ const Navbar = () => {
         </div>
 
         <div className="mobile-social">
-          <a href="https://www.instagram.com/su.beclub/" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/su.beclub/" target="_blank" rel="noreferrer" aria-label="Open BEC Instagram">
             <FaInstagram />
           </a>
-          <a href="https://www.linkedin.com/company/bangrak-entrepreneur-club/posts/?feedView=all" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/company/bangrak-entrepreneur-club/posts/?feedView=all" target="_blank" rel="noreferrer" aria-label="Open BEC LinkedIn">
             <FaLinkedin />
           </a>
-          <a href="https://shorturl.at/MZcVr" target="_blank" rel="noreferrer">
+          <a href="https://shorturl.at/MZcVr" target="_blank" rel="noreferrer" aria-label="Open BEC Line">
             <SiLine />
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61576673492512" target="_blank" rel="noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=61576673492512" target="_blank" rel="noreferrer" aria-label="Open BEC Facebook">
             <FaFacebook />
           </a>
         </div>

@@ -13,12 +13,15 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   background: #050505 !important;
   padding: 0 2rem;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
 }
 
 /* Hero Background */
@@ -54,6 +57,13 @@ html {
   z-index: 2;
   text-align: center;
   max-width: 800px;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0 4rem;
   color: white;
 }
 
@@ -62,40 +72,58 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
-  animation: slideInUp 1s ease-out 0.1s both, pulse 2s infinite 1.2s;
+  margin-bottom: 1.5rem;
+  animation: pulse 2.8s ease-in-out infinite;
 }
 
 .logo-image {
-  width: 40%;
+  width: 260px;
+  max-width: min(58vw, 280px);
+  filter: drop-shadow(0 0 28px rgba(212, 175, 55, 0.25)) brightness(1.4);
 }
 
 /* Hero Title */
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: 4rem;
   font-weight: 700;
+  width: 100%;
+  min-width: 0;
+  max-width: 900px;
+  align-self: stretch;
   margin-bottom: 1.5rem;
-  background: linear-gradient(to top, #201e1d, #d1c094, #ebdec5);
+  background: linear-gradient(to top, #d4af37, #fff2bf, #fff8df);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1.2;
-  animation: slideInUp 1s ease-out 0.3s both;
+  letter-spacing: 0;
+  text-wrap: balance;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-shadow: 0 18px 60px rgba(212, 175, 55, 0.22);
+}
+
+.hero-title-part {
+  display: inline;
+}
+
+.hero-title-part + .hero-title-part::before {
+  content: " ";
 }
 
 /* Hero Description */
 .hero-description {
   font-size: 1.2rem;
+  width: 100%;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
-  margin-bottom: 3rem;
-  animation: slideInUp 1s ease-out 0.6s both;
+  max-width: 720px;
+  margin: 0 auto 2rem;
 }
 
 /* CTA Button */
 .hero-cta {
-  margin-bottom: 4rem;
-  animation: slideInUp 1s ease-out 0.9s both;
+  margin-bottom: 0;
 }
 
 .join-scu-btn {
@@ -163,7 +191,7 @@ html {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0;
 }
 
 /* Floating Elements */
@@ -172,7 +200,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100svh;
   pointer-events: none;
   z-index: 1;
 }
@@ -249,7 +277,7 @@ html {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0;
 }
 
 /* About Section */
@@ -271,7 +299,7 @@ html {
 }
 
 .section-title {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: white;
@@ -295,7 +323,7 @@ html {
   margin-bottom: 4rem;
   background: #181511 !important; /* เปลี่ยนพื้นหลังเป็นน้ำตาลดำสนิท */
   padding: 3rem 2rem;
-  border-radius: 20px;
+  border-radius: 8px;
   backdrop-filter: blur(10px);
   border: 1px solid #e9d8a2 !important; /* ขอบทองอ่อน */
 }
@@ -335,7 +363,7 @@ html {
 .about-card {
   background: #181511 !important; /* เปลี่ยนพื้นหลังเป็นน้ำตาลดำสนิท */
   padding: 2.5rem;
-  border-radius: 15px;
+  border-radius: 8px;
   text-align: center;
   backdrop-filter: blur(10px);
   border: 1px solid #e9d8a2 !important; /* ขอบทองอ่อน */
@@ -373,7 +401,7 @@ html {
 .service-card {
   background: #181511 !important;
   padding: 2.5rem;
-  border-radius: 15px;
+  border-radius: 8px;
   text-align: center;
   backdrop-filter: blur(10px);
   border: 1px solid #e9d8a2 !important; 
@@ -391,6 +419,9 @@ html {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #d4af37;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .service-title {
@@ -431,9 +462,9 @@ html {
 .speaker-card {
     min-width: 280px;
     width: 20rem;
-    height: 25rem;
+    height: 26rem;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
+    border-radius: 8px;
     overflow: hidden;
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -441,6 +472,29 @@ html {
     position: relative;
     cursor: pointer;
     flex-shrink: 0;
+}
+
+.speaker-overlay-panel {
+    overflow-y: auto;
+}
+
+.guest-org-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.guest-org-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section-title-icon {
+  display: inline-block;
+  margin-right: 0.75rem;
+  transform: translateY(0.08em);
 }
 
 .speaker-card:hover {
@@ -552,12 +606,13 @@ html {
 /* Mobile Responsive for Speaker Slider */
 @media (max-width: 768px) {
     .speakers-section {
-        padding: 1rem;
+        padding: 3rem 1rem;
     }
 
     .speaker-card {
-        min-width: 250px;
-        width: 250px;
+        min-width: 280px;
+        width: min(100%, 320px);
+        height: 28rem;
     }
 
     .speakers-track {
@@ -568,9 +623,10 @@ html {
 
 @media (max-width: 480px) {
     .speaker-card {
-        min-width: 220px;
-        width: 220px;
-        height: 320px;
+        min-width: 0;
+        width: 100%;
+        max-width: 320px;
+        height: 30rem;
     }
 
     .speaker-image {
@@ -735,6 +791,24 @@ html {
     padding: 0 1rem;
   }
 
+  .hero-content {
+    min-height: 100svh;
+    padding: 4.5rem 0 3rem;
+  }
+
+  .logo-image {
+    width: 150px;
+    max-width: 46vw;
+  }
+
+  .hero-title {
+    font-size: 2.55rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
   .scu-logo-circle {
     width: 150px;
     height: 150px;
@@ -751,7 +825,7 @@ html {
 
   .hero-description {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
 
   .hero-stats {
@@ -795,6 +869,22 @@ html {
 }
 
 @media (max-width: 480px) {
+  .hero-title-part {
+    display: block;
+  }
+
+  .hero-title-part + .hero-title-part::before {
+    content: "";
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
   .hero-stats {
     gap: 1.5rem;
   }
@@ -805,7 +895,7 @@ html {
   }
 
   .hero-cta {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 
   .about-main {
@@ -884,7 +974,7 @@ html {
 .timeline-content {
   background: rgba(0, 0, 0, 0.3);
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: 8px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(212, 175, 55, 0.2);
   flex: 1;
@@ -934,7 +1024,7 @@ html {
 .location-info {
   background: rgba(0, 0, 0, 0.3);
   padding: 2.5rem;
-  border-radius: 20px;
+  border-radius: 8px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -991,7 +1081,7 @@ html {
 
 .location-map {
   background: rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
+  border-radius: 8px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(212, 175, 55, 0.2);
   overflow: hidden;
@@ -1035,7 +1125,7 @@ html {
 .main-sponsor {
   background: rgba(0, 0, 0, 0.4);
   padding: 2rem;
-  border-radius: 20px;
+  border-radius: 8px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(212, 175, 55, 0.3);
   display: inline-block;
@@ -1059,7 +1149,7 @@ html {
 
 .sponsor-item {
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 8px;
   text-align: center;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -1106,7 +1196,7 @@ body, .home-section {
 
 .hero-title, .section-title, .main-logo {
   font-family: 'Bebas Neue', 'Montserrat', Arial, sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 0;
   color: #e9d8a2;
 
 }
@@ -1116,7 +1206,7 @@ body, .home-section {
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
-  letter-spacing: -1px;
+  letter-spacing: 0;
 }
 
 .join-scu-btn, .directions-btn {

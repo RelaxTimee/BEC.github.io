@@ -59,7 +59,7 @@
   color: #e9d8a2;
   font-size: 28px;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 0;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -178,6 +178,16 @@
   box-shadow: 0 4px 15px rgba(244, 208, 63, 0.2);
 }
 
+.navbar-link:focus-visible,
+.navbar-social a:focus-visible,
+.hamburger:focus-visible,
+.close-btn:focus-visible,
+.mobile-link:focus-visible,
+.mobile-social a:focus-visible {
+  outline: 2px solid #f4d03f;
+  outline-offset: 3px;
+}
+
 .hamburger {
   display: none;
   z-index: 1002;
@@ -277,7 +287,7 @@
   color: #e9d8a2;
   font-size: 24px;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 0;
 }
 
 .close-btn {
@@ -389,7 +399,7 @@
   
   .navbar-logo a {
     font-size: 24px;
-    letter-spacing: 1px;
+    letter-spacing: 0;
   }
   
   .navbar-links,
