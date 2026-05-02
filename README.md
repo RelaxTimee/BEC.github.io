@@ -1,39 +1,51 @@
-BangRak Entrepreneur Club Website
-Official website for BangRak Entrepreneur Club Unite (BEC), built to present the club, event information, guest speakers, judges, agenda, sponsors, and community mission in a polished single-page experience.
+🌐 BangRak Entrepreneur Club Website
 
-Website Development Info
+Official website for BangRak Entrepreneur Club Unite (BEC) — designed to deliver a modern, polished, and engaging single-page experience that showcases the club’s identity, events, and entrepreneurial ecosystem.
+
+👨‍💻 Website Development
+
 This website was proudly developed by:
 
-Name: Pawit Panyasuphapong (Team)
-Email: 
-pawitteam201810@gmail.com
+Pawit Panyasuphapong (Team)
+📧 pawitteam201810@gmail.com
 
-Date Completed: 26 June 2025
+📅 Completed on: 26 June 2025
 
-Project Description
-This web project was created for BangRak Entrepreneur Club Unite with the goal of providing an engaging and informative platform for users. The website highlights entrepreneurship activities, knowledge-sharing sessions, speakers, judges, sponsors, and networking opportunities for students and young entrepreneurs.
+📌 Project Overview
 
-Technologies Used
-React.js
-Vite
-HTML5, CSS3, and JavaScript (ES6+)
-Tailwind CSS
-React Icons
-ESLint
-Git and GitHub
-Getting Started
-Install dependencies:
+This project was created to serve as the official digital platform for BangRak Entrepreneur Club Unite (BEC).
 
+The goal is to provide users with a seamless and engaging experience while exploring:
+
+🚀 Entrepreneurial activities
+🎤 Guest speakers & judges
+📅 Event agendas & schedules
+🤝 Networking opportunities
+🏆 Sponsors & partnerships
+🌍 Community vision & mission
+
+The design focuses on clarity, accessibility, and visual impact, making it ideal for students and young entrepreneurs.
+
+🛠️ Technologies Used
+⚛️ React.js
+⚡ Vite
+🎨 Tailwind CSS
+🧩 React Icons
+🌐 HTML5, CSS3, JavaScript (ES6+)
+🧹 ESLint
+🔧 Git & GitHub
+🚀 Getting Started
+Install dependencies
 npm install
-Run the local development server:
-
+Run development server
 npm run dev
-Build for production:
-
+Build for production
 npm run build
-Run lint checks:
-
+Run lint checks
 npm run lint
-License
-All content and code are Copyright 2025 Pawit Panyasuphapong (Team).
-Unauthorized reproduction or commercial use is prohibited without written permission.
+📜 License
+
+© 2025 Pawit Panyasuphapong (Team)
+All rights reserved.
+
+Unauthorized reproduction, distribution, or commercial use of this project is strictly prohibited without prior written permission.
